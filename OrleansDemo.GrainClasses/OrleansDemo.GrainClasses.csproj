@@ -49,12 +49,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Grain1.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="PostalOrderGrain.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Grains\PostalOrderGrain.cs" />
     <Compile Include="Properties\orleans.codegen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TruckGrain.cs" />
+    <Compile Include="Grains\TruckGrain.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OrleansDemo.GrainInterfaces\OrleansDemo.GrainInterfaces.csproj">

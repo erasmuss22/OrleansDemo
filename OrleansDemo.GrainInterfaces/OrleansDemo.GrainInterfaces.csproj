@@ -44,10 +44,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IGrain1.cs" />
-    <Compile Include="IOrder.cs" />
-    <Compile Include="IPostalOrder.cs" />
-    <Compile Include="ITruck.cs" />
+    <Compile Include="Models\IOrder.cs" />
+    <Compile Include="Grains\IPostalOrderGrain.cs" />
+    <Compile Include="Grains\ITruckGrain.cs" />
     <Compile Include="Properties\orleans.codegen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

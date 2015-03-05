@@ -14,7 +14,7 @@
 #pragma warning disable 1591
 #pragma warning disable 1998
 
-namespace OrleansDemo.GrainInterfaces
+namespace OrleansDemo.GrainInterfaces.Grains
 {
     using System;
     using System.Net;
@@ -29,56 +29,47 @@ namespace OrleansDemo.GrainInterfaces
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.0.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
-    public class Grain1Factory
+    public class PostalOrderGrainFactory
     {
         
 
-                        public static OrleansDemo.GrainInterfaces.IGrain1 GetGrain(long primaryKey)
+                        public static OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain GetGrain(System.String primaryKey)
                         {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.IGrain1), -103877802, primaryKey));
+                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain), 548732044, primaryKey));
                         }
 
-                        public static OrleansDemo.GrainInterfaces.IGrain1 GetGrain(long primaryKey, string grainClassNamePrefix)
+                        public static OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain GetGrain(System.String primaryKey, string grainClassNamePrefix)
                         {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.IGrain1), -103877802, primaryKey, grainClassNamePrefix));
+                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain), 548732044, primaryKey, grainClassNamePrefix));
                         }
 
-                        public static OrleansDemo.GrainInterfaces.IGrain1 GetGrain(System.Guid primaryKey)
-                        {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.IGrain1), -103877802, primaryKey));
-                        }
-
-                        public static OrleansDemo.GrainInterfaces.IGrain1 GetGrain(System.Guid primaryKey, string grainClassNamePrefix)
-                        {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.IGrain1), -103877802, primaryKey, grainClassNamePrefix));
-                        }
-
-            public static OrleansDemo.GrainInterfaces.IGrain1 Cast(global::Orleans.Runtime.IAddressable grainRef)
+            public static OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain Cast(global::Orleans.Runtime.IAddressable grainRef)
             {
                 
-                return Grain1Reference.Cast(grainRef);
+                return PostalOrderGrainReference.Cast(grainRef);
             }
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.0.0")]
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
         [System.SerializableAttribute()]
-        [global::Orleans.CodeGeneration.GrainReferenceAttribute("OrleansDemo.GrainInterfaces.OrleansDemo.GrainInterfaces.IGrain1")]
-        internal class Grain1Reference : global::Orleans.Runtime.GrainReference, global::Orleans.Runtime.IAddressable, OrleansDemo.GrainInterfaces.IGrain1
+        [global::Orleans.CodeGeneration.GrainReferenceAttribute("OrleansDemo.GrainInterfaces.Grains.OrleansDemo.GrainInterfaces.Grains.IPostalOrde" +
+            "rGrain")]
+        internal class PostalOrderGrainReference : global::Orleans.Runtime.GrainReference, global::Orleans.Runtime.IAddressable, OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain
         {
             
 
-            public static OrleansDemo.GrainInterfaces.IGrain1 Cast(global::Orleans.Runtime.IAddressable grainRef)
+            public static OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain Cast(global::Orleans.Runtime.IAddressable grainRef)
             {
                 
-                return (OrleansDemo.GrainInterfaces.IGrain1) global::Orleans.Runtime.GrainReference.CastInternal(typeof(OrleansDemo.GrainInterfaces.IGrain1), (global::Orleans.Runtime.GrainReference gr) => { return new Grain1Reference(gr);}, grainRef, -103877802);
+                return (OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain) global::Orleans.Runtime.GrainReference.CastInternal(typeof(OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain), (global::Orleans.Runtime.GrainReference gr) => { return new PostalOrderGrainReference(gr);}, grainRef, 548732044);
             }
             
-            protected internal Grain1Reference(global::Orleans.Runtime.GrainReference reference) : 
+            protected internal PostalOrderGrainReference(global::Orleans.Runtime.GrainReference reference) : 
                     base(reference)
             {
             }
             
-            protected internal Grain1Reference(SerializationInfo info, StreamingContext context) : 
+            protected internal PostalOrderGrainReference(SerializationInfo info, StreamingContext context) : 
                     base(info, context)
             {
             }
@@ -87,7 +78,7 @@ namespace OrleansDemo.GrainInterfaces
             {
                 get
                 {
-                    return -103877802;
+                    return 548732044;
                 }
             }
             
@@ -95,191 +86,29 @@ namespace OrleansDemo.GrainInterfaces
             {
                 get
                 {
-                    return "OrleansDemo.GrainInterfaces.OrleansDemo.GrainInterfaces.IGrain1";
+                    return "OrleansDemo.GrainInterfaces.Grains.OrleansDemo.GrainInterfaces.Grains.IPostalOrde" +
+                        "rGrain";
                 }
             }
             
             [global::Orleans.CodeGeneration.CopierMethodAttribute()]
             public static object _Copier(object original)
             {
-                Grain1Reference input = ((Grain1Reference)(original));
-                return ((Grain1Reference)(global::Orleans.Runtime.GrainReference.CopyGrainReference(input)));
+                PostalOrderGrainReference input = ((PostalOrderGrainReference)(original));
+                return ((PostalOrderGrainReference)(global::Orleans.Runtime.GrainReference.CopyGrainReference(input)));
             }
             
             [global::Orleans.CodeGeneration.SerializerMethodAttribute()]
             public static void _Serializer(object original, global::Orleans.Serialization.BinaryTokenStreamWriter stream, System.Type expected)
             {
-                Grain1Reference input = ((Grain1Reference)(original));
+                PostalOrderGrainReference input = ((PostalOrderGrainReference)(original));
                 global::Orleans.Runtime.GrainReference.SerializeGrainReference(input, stream, expected);
             }
             
             [global::Orleans.CodeGeneration.DeserializerMethodAttribute()]
             public static object _Deserializer(System.Type expected, global::Orleans.Serialization.BinaryTokenStreamReader stream)
             {
-                return Grain1Reference.Cast(((global::Orleans.Runtime.GrainReference)(global::Orleans.Runtime.GrainReference.DeserializeGrainReference(expected, stream))));
-            }
-            
-            public override bool IsCompatible(int interfaceId)
-            {
-                return (interfaceId == this.InterfaceId);
-            }
-            
-            protected override string GetMethodName(int interfaceId, int methodId)
-            {
-                return Grain1MethodInvoker.GetMethodName(interfaceId, methodId);
-            }
-            
-            System.Threading.Tasks.Task<int> OrleansDemo.GrainInterfaces.IGrain1.GetSquaredValue(int @input)
-            {
-
-                return base.InvokeMethodAsync<System.Int32>(1690699485, new object[] {@input} );
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.0.0")]
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
-    [global::Orleans.CodeGeneration.MethodInvokerAttribute("OrleansDemo.GrainInterfaces.OrleansDemo.GrainInterfaces.IGrain1", -103877802)]
-    internal class Grain1MethodInvoker : global::Orleans.CodeGeneration.IGrainMethodInvoker
-    {
-        
-        int global::Orleans.CodeGeneration.IGrainMethodInvoker.InterfaceId
-        {
-            get
-            {
-                return -103877802;
-            }
-        }
-        
-        global::System.Threading.Tasks.Task<object> global::Orleans.CodeGeneration.IGrainMethodInvoker.Invoke(global::Orleans.Runtime.IAddressable grain, int interfaceId, int methodId, object[] arguments)
-        {
-
-            try
-            {                    if (grain == null) throw new System.ArgumentNullException("grain");
-                switch (interfaceId)
-                {
-                    case -103877802:  // IGrain1
-                        switch (methodId)
-                        {
-                            case 1690699485: 
-                                return ((IGrain1)grain).GetSquaredValue((Int32)arguments[0]).ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)t.Result; });
-                            default: 
-                            throw new NotImplementedException("interfaceId="+interfaceId+",methodId="+methodId);
-                        }
-                    default:
-                        throw new System.InvalidCastException("interfaceId="+interfaceId);
-                }
-            }
-            catch(Exception ex)
-            {
-                var t = new System.Threading.Tasks.TaskCompletionSource<object>();
-                t.SetException(ex);
-                return t.Task;
-            }
-        }
-        
-        public static string GetMethodName(int interfaceId, int methodId)
-        {
-
-            switch (interfaceId)
-            {
-                
-                case -103877802:  // IGrain1
-                    switch (methodId)
-                    {
-                        case 1690699485:
-                            return "GetSquaredValue";
-                    
-                        default: 
-                            throw new NotImplementedException("interfaceId="+interfaceId+",methodId="+methodId);
-                    }
-
-                default:
-                    throw new System.InvalidCastException("interfaceId="+interfaceId);
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.0.0")]
-    [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
-    public class PostalOrderFactory
-    {
-        
-
-                        public static OrleansDemo.GrainInterfaces.IPostalOrder GetGrain(System.String primaryKey)
-                        {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.IPostalOrder), 114829820, primaryKey));
-                        }
-
-                        public static OrleansDemo.GrainInterfaces.IPostalOrder GetGrain(System.String primaryKey, string grainClassNamePrefix)
-                        {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.IPostalOrder), 114829820, primaryKey, grainClassNamePrefix));
-                        }
-
-            public static OrleansDemo.GrainInterfaces.IPostalOrder Cast(global::Orleans.Runtime.IAddressable grainRef)
-            {
-                
-                return PostalOrderReference.Cast(grainRef);
-            }
-        
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.0.0")]
-        [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
-        [System.SerializableAttribute()]
-        [global::Orleans.CodeGeneration.GrainReferenceAttribute("OrleansDemo.GrainInterfaces.OrleansDemo.GrainInterfaces.IPostalOrder")]
-        internal class PostalOrderReference : global::Orleans.Runtime.GrainReference, global::Orleans.Runtime.IAddressable, OrleansDemo.GrainInterfaces.IPostalOrder
-        {
-            
-
-            public static OrleansDemo.GrainInterfaces.IPostalOrder Cast(global::Orleans.Runtime.IAddressable grainRef)
-            {
-                
-                return (OrleansDemo.GrainInterfaces.IPostalOrder) global::Orleans.Runtime.GrainReference.CastInternal(typeof(OrleansDemo.GrainInterfaces.IPostalOrder), (global::Orleans.Runtime.GrainReference gr) => { return new PostalOrderReference(gr);}, grainRef, 114829820);
-            }
-            
-            protected internal PostalOrderReference(global::Orleans.Runtime.GrainReference reference) : 
-                    base(reference)
-            {
-            }
-            
-            protected internal PostalOrderReference(SerializationInfo info, StreamingContext context) : 
-                    base(info, context)
-            {
-            }
-            
-            protected override int InterfaceId
-            {
-                get
-                {
-                    return 114829820;
-                }
-            }
-            
-            protected override string InterfaceName
-            {
-                get
-                {
-                    return "OrleansDemo.GrainInterfaces.OrleansDemo.GrainInterfaces.IPostalOrder";
-                }
-            }
-            
-            [global::Orleans.CodeGeneration.CopierMethodAttribute()]
-            public static object _Copier(object original)
-            {
-                PostalOrderReference input = ((PostalOrderReference)(original));
-                return ((PostalOrderReference)(global::Orleans.Runtime.GrainReference.CopyGrainReference(input)));
-            }
-            
-            [global::Orleans.CodeGeneration.SerializerMethodAttribute()]
-            public static void _Serializer(object original, global::Orleans.Serialization.BinaryTokenStreamWriter stream, System.Type expected)
-            {
-                PostalOrderReference input = ((PostalOrderReference)(original));
-                global::Orleans.Runtime.GrainReference.SerializeGrainReference(input, stream, expected);
-            }
-            
-            [global::Orleans.CodeGeneration.DeserializerMethodAttribute()]
-            public static object _Deserializer(System.Type expected, global::Orleans.Serialization.BinaryTokenStreamReader stream)
-            {
-                return PostalOrderReference.Cast(((global::Orleans.Runtime.GrainReference)(global::Orleans.Runtime.GrainReference.DeserializeGrainReference(expected, stream))));
+                return PostalOrderGrainReference.Cast(((global::Orleans.Runtime.GrainReference)(global::Orleans.Runtime.GrainReference.DeserializeGrainReference(expected, stream))));
             }
             
             public override bool IsCompatible(int interfaceId)
@@ -290,28 +119,28 @@ namespace OrleansDemo.GrainInterfaces
             
             protected override string GetMethodName(int interfaceId, int methodId)
             {
-                return PostalOrderMethodInvoker.GetMethodName(interfaceId, methodId);
+                return PostalOrderGrainMethodInvoker.GetMethodName(interfaceId, methodId);
             }
             
-            System.Threading.Tasks.Task OrleansDemo.GrainInterfaces.IPostalOrder.UpdateShippingStatus(string @status, OrleansDemo.GrainInterfaces.ITruck @truck)
+            System.Threading.Tasks.Task OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain.UpdateShippingStatus(string @status, OrleansDemo.GrainInterfaces.Grains.ITruckGrain @truck)
             {
 
-                return base.InvokeMethodAsync<object>(-926269417, new object[] {@status, @truck is global::Orleans.Grain ? OrleansDemo.GrainInterfaces.TruckFactory.Cast(@truck.AsReference()) : @truck} );
+                return base.InvokeMethodAsync<object>(-892319013, new object[] {@status, @truck is global::Orleans.Grain ? OrleansDemo.GrainInterfaces.Grains.TruckGrainFactory.Cast(@truck.AsReference()) : @truck} );
             }
             
-            System.Threading.Tasks.Task<string> OrleansDemo.GrainInterfaces.IPostalOrder.GetCurrentStatus()
+            System.Threading.Tasks.Task<string> OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain.GetCurrentStatus()
             {
 
                 return base.InvokeMethodAsync<System.String>(825167218, new object[] {} );
             }
             
-            System.Threading.Tasks.Task<string> OrleansDemo.GrainInterfaces.IPostalOrder.GetTruckLocation()
+            System.Threading.Tasks.Task<string> OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain.GetTruckLocation()
             {
 
                 return base.InvokeMethodAsync<System.String>(-389530197, new object[] {} );
             }
             
-            System.Threading.Tasks.Task OrleansDemo.GrainInterfaces.IPostalOrder.CreateOrder(int @cost, string @name)
+            System.Threading.Tasks.Task OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain.CreateOrder(int @cost, string @name)
             {
 
                 return base.InvokeMethodAsync<object>(1142032970, new object[] {@cost, @name} );
@@ -321,15 +150,16 @@ namespace OrleansDemo.GrainInterfaces
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.0.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
-    [global::Orleans.CodeGeneration.MethodInvokerAttribute("OrleansDemo.GrainInterfaces.OrleansDemo.GrainInterfaces.IPostalOrder", 114829820)]
-    internal class PostalOrderMethodInvoker : global::Orleans.CodeGeneration.IGrainMethodInvoker
+    [global::Orleans.CodeGeneration.MethodInvokerAttribute("OrleansDemo.GrainInterfaces.Grains.OrleansDemo.GrainInterfaces.Grains.IPostalOrde" +
+        "rGrain", 548732044)]
+    internal class PostalOrderGrainMethodInvoker : global::Orleans.CodeGeneration.IGrainMethodInvoker
     {
         
         int global::Orleans.CodeGeneration.IGrainMethodInvoker.InterfaceId
         {
             get
             {
-                return 114829820;
+                return 548732044;
             }
         }
         
@@ -340,17 +170,17 @@ namespace OrleansDemo.GrainInterfaces
             {                    if (grain == null) throw new System.ArgumentNullException("grain");
                 switch (interfaceId)
                 {
-                    case 114829820:  // IPostalOrder
+                    case 548732044:  // IPostalOrderGrain
                         switch (methodId)
                         {
-                            case -926269417: 
-                                return ((IPostalOrder)grain).UpdateShippingStatus((String)arguments[0], (ITruck)arguments[1]).ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)null; });
+                            case -892319013: 
+                                return ((IPostalOrderGrain)grain).UpdateShippingStatus((String)arguments[0], (ITruckGrain)arguments[1]).ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)null; });
                             case 825167218: 
-                                return ((IPostalOrder)grain).GetCurrentStatus().ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)t.Result; });
+                                return ((IPostalOrderGrain)grain).GetCurrentStatus().ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)t.Result; });
                             case -389530197: 
-                                return ((IPostalOrder)grain).GetTruckLocation().ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)t.Result; });
+                                return ((IPostalOrderGrain)grain).GetTruckLocation().ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)t.Result; });
                             case 1142032970: 
-                                return ((IPostalOrder)grain).CreateOrder((Int32)arguments[0], (String)arguments[1]).ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)null; });
+                                return ((IPostalOrderGrain)grain).CreateOrder((Int32)arguments[0], (String)arguments[1]).ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)null; });
                             default: 
                             throw new NotImplementedException("interfaceId="+interfaceId+",methodId="+methodId);
                         }case -1277021679:  // IGrainWithStringKey
@@ -377,10 +207,10 @@ namespace OrleansDemo.GrainInterfaces
             switch (interfaceId)
             {
                 
-                case 114829820:  // IPostalOrder
+                case 548732044:  // IPostalOrderGrain
                     switch (methodId)
                     {
-                        case -926269417:
+                        case -892319013:
                             return "UpdateShippingStatus";
                     case 825167218:
                             return "GetCurrentStatus";
@@ -408,46 +238,47 @@ namespace OrleansDemo.GrainInterfaces
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.0.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
-    public class TruckFactory
+    public class TruckGrainFactory
     {
         
 
-                        public static OrleansDemo.GrainInterfaces.ITruck GetGrain(System.String primaryKey)
+                        public static OrleansDemo.GrainInterfaces.Grains.ITruckGrain GetGrain(System.String primaryKey)
                         {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.ITruck), 689856320, primaryKey));
+                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.Grains.ITruckGrain), -644734325, primaryKey));
                         }
 
-                        public static OrleansDemo.GrainInterfaces.ITruck GetGrain(System.String primaryKey, string grainClassNamePrefix)
+                        public static OrleansDemo.GrainInterfaces.Grains.ITruckGrain GetGrain(System.String primaryKey, string grainClassNamePrefix)
                         {
-                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.ITruck), 689856320, primaryKey, grainClassNamePrefix));
+                            return Cast(global::Orleans.CodeGeneration.GrainFactoryBase.MakeGrainReferenceInternal(typeof(OrleansDemo.GrainInterfaces.Grains.ITruckGrain), -644734325, primaryKey, grainClassNamePrefix));
                         }
 
-            public static OrleansDemo.GrainInterfaces.ITruck Cast(global::Orleans.Runtime.IAddressable grainRef)
+            public static OrleansDemo.GrainInterfaces.Grains.ITruckGrain Cast(global::Orleans.Runtime.IAddressable grainRef)
             {
                 
-                return TruckReference.Cast(grainRef);
+                return TruckGrainReference.Cast(grainRef);
             }
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.0.0")]
         [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
         [System.SerializableAttribute()]
-        [global::Orleans.CodeGeneration.GrainReferenceAttribute("OrleansDemo.GrainInterfaces.OrleansDemo.GrainInterfaces.ITruck")]
-        internal class TruckReference : global::Orleans.Runtime.GrainReference, global::Orleans.Runtime.IAddressable, OrleansDemo.GrainInterfaces.ITruck
+        [global::Orleans.CodeGeneration.GrainReferenceAttribute("OrleansDemo.GrainInterfaces.Grains.OrleansDemo.GrainInterfaces.Grains.ITruckGrain" +
+            "")]
+        internal class TruckGrainReference : global::Orleans.Runtime.GrainReference, global::Orleans.Runtime.IAddressable, OrleansDemo.GrainInterfaces.Grains.ITruckGrain
         {
             
 
-            public static OrleansDemo.GrainInterfaces.ITruck Cast(global::Orleans.Runtime.IAddressable grainRef)
+            public static OrleansDemo.GrainInterfaces.Grains.ITruckGrain Cast(global::Orleans.Runtime.IAddressable grainRef)
             {
                 
-                return (OrleansDemo.GrainInterfaces.ITruck) global::Orleans.Runtime.GrainReference.CastInternal(typeof(OrleansDemo.GrainInterfaces.ITruck), (global::Orleans.Runtime.GrainReference gr) => { return new TruckReference(gr);}, grainRef, 689856320);
+                return (OrleansDemo.GrainInterfaces.Grains.ITruckGrain) global::Orleans.Runtime.GrainReference.CastInternal(typeof(OrleansDemo.GrainInterfaces.Grains.ITruckGrain), (global::Orleans.Runtime.GrainReference gr) => { return new TruckGrainReference(gr);}, grainRef, -644734325);
             }
             
-            protected internal TruckReference(global::Orleans.Runtime.GrainReference reference) : 
+            protected internal TruckGrainReference(global::Orleans.Runtime.GrainReference reference) : 
                     base(reference)
             {
             }
             
-            protected internal TruckReference(SerializationInfo info, StreamingContext context) : 
+            protected internal TruckGrainReference(SerializationInfo info, StreamingContext context) : 
                     base(info, context)
             {
             }
@@ -456,7 +287,7 @@ namespace OrleansDemo.GrainInterfaces
             {
                 get
                 {
-                    return 689856320;
+                    return -644734325;
                 }
             }
             
@@ -464,28 +295,29 @@ namespace OrleansDemo.GrainInterfaces
             {
                 get
                 {
-                    return "OrleansDemo.GrainInterfaces.OrleansDemo.GrainInterfaces.ITruck";
+                    return "OrleansDemo.GrainInterfaces.Grains.OrleansDemo.GrainInterfaces.Grains.ITruckGrain" +
+                        "";
                 }
             }
             
             [global::Orleans.CodeGeneration.CopierMethodAttribute()]
             public static object _Copier(object original)
             {
-                TruckReference input = ((TruckReference)(original));
-                return ((TruckReference)(global::Orleans.Runtime.GrainReference.CopyGrainReference(input)));
+                TruckGrainReference input = ((TruckGrainReference)(original));
+                return ((TruckGrainReference)(global::Orleans.Runtime.GrainReference.CopyGrainReference(input)));
             }
             
             [global::Orleans.CodeGeneration.SerializerMethodAttribute()]
             public static void _Serializer(object original, global::Orleans.Serialization.BinaryTokenStreamWriter stream, System.Type expected)
             {
-                TruckReference input = ((TruckReference)(original));
+                TruckGrainReference input = ((TruckGrainReference)(original));
                 global::Orleans.Runtime.GrainReference.SerializeGrainReference(input, stream, expected);
             }
             
             [global::Orleans.CodeGeneration.DeserializerMethodAttribute()]
             public static object _Deserializer(System.Type expected, global::Orleans.Serialization.BinaryTokenStreamReader stream)
             {
-                return TruckReference.Cast(((global::Orleans.Runtime.GrainReference)(global::Orleans.Runtime.GrainReference.DeserializeGrainReference(expected, stream))));
+                return TruckGrainReference.Cast(((global::Orleans.Runtime.GrainReference)(global::Orleans.Runtime.GrainReference.DeserializeGrainReference(expected, stream))));
             }
             
             public override bool IsCompatible(int interfaceId)
@@ -496,46 +328,47 @@ namespace OrleansDemo.GrainInterfaces
             
             protected override string GetMethodName(int interfaceId, int methodId)
             {
-                return TruckMethodInvoker.GetMethodName(interfaceId, methodId);
+                return TruckGrainMethodInvoker.GetMethodName(interfaceId, methodId);
             }
             
-            System.Threading.Tasks.Task OrleansDemo.GrainInterfaces.ITruck.UpdateCurrentLocation(string @location)
+            System.Threading.Tasks.Task OrleansDemo.GrainInterfaces.Grains.ITruckGrain.UpdateCurrentLocation(string @location)
             {
 
                 return base.InvokeMethodAsync<object>(-2066867828, new object[] {@location} );
             }
             
-            System.Threading.Tasks.Task<string> OrleansDemo.GrainInterfaces.ITruck.GetCurrentLocation()
+            System.Threading.Tasks.Task<string> OrleansDemo.GrainInterfaces.Grains.ITruckGrain.GetCurrentLocation()
             {
 
                 return base.InvokeMethodAsync<System.String>(1302107453, new object[] {} );
             }
             
-            System.Threading.Tasks.Task OrleansDemo.GrainInterfaces.ITruck.CreatePayload(IEnumerable<String> @orderNumbers)
+            System.Threading.Tasks.Task OrleansDemo.GrainInterfaces.Grains.ITruckGrain.CreatePayload(IEnumerable<String> @orderNumbers)
             {
 
                 return base.InvokeMethodAsync<object>(-880727137, new object[] {@orderNumbers} );
             }
             
-            System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<OrleansDemo.GrainInterfaces.IPostalOrder>> OrleansDemo.GrainInterfaces.ITruck.GetPostalOrders()
+            System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain>> OrleansDemo.GrainInterfaces.Grains.ITruckGrain.GetPostalOrders()
             {
 
-                return base.InvokeMethodAsync<System.Collections.Generic.IEnumerable<OrleansDemo.GrainInterfaces.IPostalOrder>>(-1576550956, new object[] {} );
+                return base.InvokeMethodAsync<System.Collections.Generic.IEnumerable<OrleansDemo.GrainInterfaces.Grains.IPostalOrderGrain>>(-1576550956, new object[] {} );
             }
         }
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.0.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
-    [global::Orleans.CodeGeneration.MethodInvokerAttribute("OrleansDemo.GrainInterfaces.OrleansDemo.GrainInterfaces.ITruck", 689856320)]
-    internal class TruckMethodInvoker : global::Orleans.CodeGeneration.IGrainMethodInvoker
+    [global::Orleans.CodeGeneration.MethodInvokerAttribute("OrleansDemo.GrainInterfaces.Grains.OrleansDemo.GrainInterfaces.Grains.ITruckGrain" +
+        "", -644734325)]
+    internal class TruckGrainMethodInvoker : global::Orleans.CodeGeneration.IGrainMethodInvoker
     {
         
         int global::Orleans.CodeGeneration.IGrainMethodInvoker.InterfaceId
         {
             get
             {
-                return 689856320;
+                return -644734325;
             }
         }
         
@@ -546,17 +379,17 @@ namespace OrleansDemo.GrainInterfaces
             {                    if (grain == null) throw new System.ArgumentNullException("grain");
                 switch (interfaceId)
                 {
-                    case 689856320:  // ITruck
+                    case -644734325:  // ITruckGrain
                         switch (methodId)
                         {
                             case -2066867828: 
-                                return ((ITruck)grain).UpdateCurrentLocation((String)arguments[0]).ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)null; });
+                                return ((ITruckGrain)grain).UpdateCurrentLocation((String)arguments[0]).ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)null; });
                             case 1302107453: 
-                                return ((ITruck)grain).GetCurrentLocation().ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)t.Result; });
+                                return ((ITruckGrain)grain).GetCurrentLocation().ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)t.Result; });
                             case -880727137: 
-                                return ((ITruck)grain).CreatePayload((IEnumerable<String>)arguments[0]).ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)null; });
+                                return ((ITruckGrain)grain).CreatePayload((IEnumerable<String>)arguments[0]).ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)null; });
                             case -1576550956: 
-                                return ((ITruck)grain).GetPostalOrders().ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)t.Result; });
+                                return ((ITruckGrain)grain).GetPostalOrders().ContinueWith(t => {if (t.Status == System.Threading.Tasks.TaskStatus.Faulted) throw t.Exception; return (object)t.Result; });
                             default: 
                             throw new NotImplementedException("interfaceId="+interfaceId+",methodId="+methodId);
                         }case -1277021679:  // IGrainWithStringKey
@@ -583,7 +416,7 @@ namespace OrleansDemo.GrainInterfaces
             switch (interfaceId)
             {
                 
-                case 689856320:  // ITruck
+                case -644734325:  // ITruckGrain
                     switch (methodId)
                     {
                         case -2066867828:

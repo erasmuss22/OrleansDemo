@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OrleansDemo.GrainInterfaces
+﻿namespace OrleansDemo.GrainInterfaces.Models
 {
     public interface IOrder
     {

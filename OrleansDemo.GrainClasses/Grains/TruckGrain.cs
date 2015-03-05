@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Orleans;
-using OrleansDemo.GrainInterfaces;
+﻿using Orleans;
 using Orleans.Providers;
+using OrleansDemo.GrainInterfaces.Grains;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
-namespace OrleansDemo.GrainClasses
+namespace OrleansDemo.GrainClasses.Grains
 {
     [StorageProvider(ProviderName = "AzureStore")]
-    public class TruckGrain : Grain<ITruckState>, ITruck
+    public class TruckGrain : Grain<ITruckState>, ITruckGrain
     {
         public async Task UpdateCurrentLocation(string location)
         {
@@ -27,12 +24,12 @@ namespace OrleansDemo.GrainClasses
         public async Task CreatePayload(IEnumerable<string> orderNumbers)
         {
             List<Task> addOrderToTruckTasks = new List<Task>();
-            List<IPostalOrder> postalOrderGrains = new List<IPostalOrder>();
+            List<IPostalOrderGrain> postalOrderGrains = new List<IPostalOrderGrain>();
 
             // add the orders to the truck in parallel
             foreach (string orderNumber in orderNumbers)
             {
-                IPostalOrder orderGrain = PostalOrderFactory.GetGrain(orderNumber);
+                IPostalOrderGrain orderGrain = PostalOrderGrainFactory.GetGrain(orderNumber);
                 postalOrderGrains.Add(orderGrain);
                 addOrderToTruckTasks.Add(orderGrain.UpdateShippingStatus("Shipped", this));
             }
@@ -45,7 +42,7 @@ namespace OrleansDemo.GrainClasses
             await this.State.WriteStateAsync();
         }
 
-        public async Task<IEnumerable<IPostalOrder>> GetPostalOrders()
+        public async Task<IEnumerable<IPostalOrderGrain>> GetPostalOrders()
         {
             await this.State.ReadStateAsync();
             return this.State.PostalOrders;
@@ -56,6 +53,6 @@ namespace OrleansDemo.GrainClasses
     {
         string Location { get; set; }
 
-        IEnumerable<IPostalOrder> PostalOrders { get; set; }
+        IEnumerable<IPostalOrderGrain> PostalOrders { get; set; }
     }
 }

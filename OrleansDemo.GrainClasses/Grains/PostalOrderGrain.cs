@@ -1,18 +1,21 @@
 ﻿using Orleans;
 using Orleans.Providers;
-using OrleansDemo.GrainInterfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using OrleansDemo.GrainInterfaces.Grains;
 using System.Threading.Tasks;
 
-namespace OrleansDemo.GrainClasses
+namespace OrleansDemo.GrainClasses.Grains
 {
     [StorageProvider(ProviderName = "AzureStore")]
-    public class PostalOrderGrain : Grain<IPostalOrderState>, IPostalOrder
+    public class PostalOrderGrain : Grain<IPostalOrderState>, IPostalOrderGrain
     {
-        public async Task UpdateShippingStatus(string status, ITruck truck)
+        public override Task OnActivateAsync()
+        {
+            this.State.Status = "Created";
+            this.State.Cost = 0;
+            return base.OnActivateAsync();
+        }
+
+        public async Task UpdateShippingStatus(string status, ITruckGrain truck)
         {
             this.State.Status = status;
             this.State.Truck = truck;
@@ -39,7 +42,6 @@ namespace OrleansDemo.GrainClasses
         {
             this.State.Name = name;
             this.State.Cost = cost;
-            this.State.Status = "Created";
             await this.State.WriteStateAsync();
         }
     }
@@ -47,8 +49,11 @@ namespace OrleansDemo.GrainClasses
     public interface IPostalOrderState : IGrainState
     {
         string Name { get; set; }
-        ITruck Truck { get; set; }
+
+        ITruckGrain Truck { get; set; }
+        
         string Status { get; set; }
+        
         int Cost { get; set; }
     }
 }

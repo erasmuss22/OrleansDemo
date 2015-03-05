@@ -1,13 +1,10 @@
 ﻿using Orleans;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace OrleansDemo.GrainInterfaces
+namespace OrleansDemo.GrainInterfaces.Grains
 {
-    public interface ITruck : IGrainWithStringKey
+    public interface ITruckGrain : IGrainWithStringKey
     {
         Task UpdateCurrentLocation(string location);
 
@@ -15,6 +12,6 @@ namespace OrleansDemo.GrainInterfaces
 
         Task CreatePayload(IEnumerable<string> orderNumbers);
 
-        Task<IEnumerable<IPostalOrder>> GetPostalOrders();
+        Task<IEnumerable<IPostalOrderGrain>> GetPostalOrders();
     }
 }

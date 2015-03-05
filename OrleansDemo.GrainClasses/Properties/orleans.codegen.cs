@@ -14,30 +14,30 @@
 #pragma warning disable 1591
 #pragma warning disable 1998
 
-namespace OrleansDemo.GrainClasses
+namespace OrleansDemo.GrainClasses.Grains
 {
-    using Orleans.CodeGeneration;
-    using Orleans;
     using System;
-    using System.Runtime.InteropServices;
-    using System.Runtime.Serialization;
     using System.Collections.Generic;
     using System.Collections;
-    using OrleansDemo.GrainInterfaces;
+    using OrleansDemo.GrainInterfaces.Grains;
+    using Orleans;
     using Orleans.Runtime;
+    using Orleans.CodeGeneration;
+    using System.Runtime.InteropServices;
+    using System.Runtime.Serialization;
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.0.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
     [SerializableAttribute()]
-    [global::Orleans.CodeGeneration.GrainStateAttribute("OrleansDemo.GrainClasses.OrleansDemo.GrainClasses.PostalOrderGrain")]
+    [global::Orleans.CodeGeneration.GrainStateAttribute("OrleansDemo.GrainClasses.Grains.OrleansDemo.GrainClasses.Grains.PostalOrderGrain")]
     public class PostalOrderGrainState : global::Orleans.CodeGeneration.GrainState, IPostalOrderState
     {
         
 
             public String @Name { get; set; }
 
-            public ITruck @Truck { get; set; }
+            public ITruckGrain @Truck { get; set; }
 
             public String @Status { get; set; }
 
@@ -48,7 +48,7 @@ namespace OrleansDemo.GrainClasses
                 object value;
                 if (values == null) { InitStateFields(); return; }
                 if (values.TryGetValue("Name", out value)) @Name = (String) value;
-                if (values.TryGetValue("Truck", out value)) @Truck = (ITruck) value;
+                if (values.TryGetValue("Truck", out value)) @Truck = (ITruckGrain) value;
                 if (values.TryGetValue("Status", out value)) @Status = (String) value;
                 if (values.TryGetValue("Cost", out value)) @Cost = value is Int64 ? (Int32)(Int64)value : (Int32)value;
             }
@@ -59,7 +59,7 @@ namespace OrleansDemo.GrainClasses
             }
         
         public PostalOrderGrainState() : 
-                base("OrleansDemo.GrainClasses.PostalOrderGrain")
+                base("OrleansDemo.GrainClasses.Grains.PostalOrderGrain")
         {
             this.InitStateFields();
         }
@@ -77,7 +77,7 @@ namespace OrleansDemo.GrainClasses
         private void InitStateFields()
         {
             this.Name = default(String);
-            this.Truck = default(ITruck);
+            this.Truck = default(ITruckGrain);
             this.Status = default(String);
             this.Cost = default(Int32);
         }
@@ -108,21 +108,21 @@ namespace OrleansDemo.GrainClasses
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Orleans-CodeGenerator", "1.0.0.0")]
     [System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
     [SerializableAttribute()]
-    [global::Orleans.CodeGeneration.GrainStateAttribute("OrleansDemo.GrainClasses.OrleansDemo.GrainClasses.TruckGrain")]
+    [global::Orleans.CodeGeneration.GrainStateAttribute("OrleansDemo.GrainClasses.Grains.OrleansDemo.GrainClasses.Grains.TruckGrain")]
     public class TruckGrainState : global::Orleans.CodeGeneration.GrainState, ITruckState
     {
         
 
             public String @Location { get; set; }
 
-            public IEnumerable<IPostalOrder> @PostalOrders { get; set; }
+            public IEnumerable<IPostalOrderGrain> @PostalOrders { get; set; }
 
             public override void SetAll(System.Collections.Generic.IDictionary<string,object> values)
             {   
                 object value;
                 if (values == null) { InitStateFields(); return; }
                 if (values.TryGetValue("Location", out value)) @Location = (String) value;
-                if (values.TryGetValue("PostalOrders", out value)) @PostalOrders = (IEnumerable<IPostalOrder>) value;
+                if (values.TryGetValue("PostalOrders", out value)) @PostalOrders = (IEnumerable<IPostalOrderGrain>) value;
             }
 
             public override System.String ToString()
@@ -131,7 +131,7 @@ namespace OrleansDemo.GrainClasses
             }
         
         public TruckGrainState() : 
-                base("OrleansDemo.GrainClasses.TruckGrain")
+                base("OrleansDemo.GrainClasses.Grains.TruckGrain")
         {
             this.InitStateFields();
         }
@@ -147,7 +147,7 @@ namespace OrleansDemo.GrainClasses
         private void InitStateFields()
         {
             this.Location = default(String);
-            this.PostalOrders = default(IEnumerable<IPostalOrder>);
+            this.PostalOrders = default(IEnumerable<IPostalOrderGrain>);
         }
         
         [global::Orleans.CodeGeneration.CopierMethodAttribute()]
