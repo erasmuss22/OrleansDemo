@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="AzureCloudService1" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2014-06.2.4">
+  <Role name="OrleansDemoApi">
+    <Instances count="2" />
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" value="DefaultEndpointsProtocol=https;AccountName=orleansdemostorage;AccountKey=SjI1UB10MCajHWco8GdS6GYzq4FJrlnrFXvk/DruElIF7lfJdAEAIdtY4H68ZqYku5GU+ybkgy8mP8liG4GA8A==" />
+    </ConfigurationSettings>
+  </Role>
+  <Role name="Silo">
+    <Instances count="2" />
+    <ConfigurationSettings>
+      <Setting name="DataConnectionString" value="DefaultEndpointsProtocol=https;AccountName=orleansdemostorage;AccountKey=SjI1UB10MCajHWco8GdS6GYzq4FJrlnrFXvk/DruElIF7lfJdAEAIdtY4H68ZqYku5GU+ybkgy8mP8liG4GA8A==" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

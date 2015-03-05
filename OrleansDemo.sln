@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{CC5FD16D-436D-48AD-A40C-5A424C6E3E79}") = "OrleansDemoCloudService", "AzureCloudService1\OrleansDemoCloudService.ccproj", "{098FC99D-B9F7-489C-9B45-B03375259955}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrleansDemoApi", "OrleansDemoApi\OrleansDemoApi.csproj", "{D844A960-13D0-46DC-893A-DCA1DE603A23}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silo", "Silo\Silo.csproj", "{0E6BE20B-4FCE-4F17-A0E6-A1E1735D2A81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrleansDemo.GrainInterfaces", "OrleansDemo.GrainInterfaces\OrleansDemo.GrainInterfaces.csproj", "{4ABB986A-208A-487F-989C-5503852F371A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrleansDemo.GrainClasses", "OrleansDemo.GrainClasses\OrleansDemo.GrainClasses.csproj", "{D9EBC410-5D18-400A-A9D2-7C0A59F71D1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrleansDemo.TestSilo", "OrleansDemo.TestSilo\OrleansDemo.TestSilo.csproj", "{2D165749-3864-4ABE-910A-93DF5B4B525C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{098FC99D-B9F7-489C-9B45-B03375259955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{098FC99D-B9F7-489C-9B45-B03375259955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{098FC99D-B9F7-489C-9B45-B03375259955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{098FC99D-B9F7-489C-9B45-B03375259955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D844A960-13D0-46DC-893A-DCA1DE603A23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D844A960-13D0-46DC-893A-DCA1DE603A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D844A960-13D0-46DC-893A-DCA1DE603A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D844A960-13D0-46DC-893A-DCA1DE603A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E6BE20B-4FCE-4F17-A0E6-A1E1735D2A81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E6BE20B-4FCE-4F17-A0E6-A1E1735D2A81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E6BE20B-4FCE-4F17-A0E6-A1E1735D2A81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E6BE20B-4FCE-4F17-A0E6-A1E1735D2A81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ABB986A-208A-487F-989C-5503852F371A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ABB986A-208A-487F-989C-5503852F371A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ABB986A-208A-487F-989C-5503852F371A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ABB986A-208A-487F-989C-5503852F371A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9EBC410-5D18-400A-A9D2-7C0A59F71D1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9EBC410-5D18-400A-A9D2-7C0A59F71D1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9EBC410-5D18-400A-A9D2-7C0A59F71D1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9EBC410-5D18-400A-A9D2-7C0A59F71D1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D165749-3864-4ABE-910A-93DF5B4B525C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D165749-3864-4ABE-910A-93DF5B4B525C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D165749-3864-4ABE-910A-93DF5B4B525C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D165749-3864-4ABE-910A-93DF5B4B525C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

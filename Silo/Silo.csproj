@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E6BE20B-4FCE-4F17-A0E6-A1E1735D2A81}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Silo</RootNamespace>
+    <AssemblyName>Silo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RoleType>Worker</RoleType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.2\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Configuration">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.2.0.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Storage">
+      <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Orleans">
+      <HintPath>..\..\..\..\..\..\..\Microsoft Project Orleans SDK v1.0\SDK\Binaries\OrleansServer\Orleans.dll</HintPath>
+    </Reference>
+    <Reference Include="OrleansAzureUtils">
+      <HintPath>..\..\..\..\..\..\..\Microsoft Project Orleans SDK v1.0\SDK\Binaries\OrleansServer\OrleansAzureUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="OrleansProviders">
+      <HintPath>..\..\..\..\..\..\..\Microsoft Project Orleans SDK v1.0\SDK\Binaries\OrleansServer\OrleansProviders.dll</HintPath>
+    </Reference>
+    <Reference Include="OrleansRuntime">
+      <HintPath>..\..\..\..\..\..\..\Microsoft Project Orleans SDK v1.0\SDK\Binaries\OrleansServer\OrleansRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Spatial, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.6.2\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkerRole.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OrleansDemo.GrainClasses\OrleansDemo.GrainClasses.csproj">
+      <Project>{d9ebc410-5d18-400a-a9d2-7c0a59f71d1c}</Project>
+      <Name>OrleansDemo.GrainClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrleansDemo.GrainInterfaces\OrleansDemo.GrainInterfaces.csproj">
+      <Project>{4abb986a-208a-487f-989c-5503852f371a}</Project>
+      <Name>OrleansDemo.GrainInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="OrleansConfiguration.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
